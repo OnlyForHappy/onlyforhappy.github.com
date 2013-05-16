@@ -89,29 +89,29 @@
 21
 22
 23
-</pre></td><td class="code"><pre>&lt<span class="comment">;html&gt;</span>
-&lt<span class="comment">;head&gt;</span>
-	&lt<span class="comment">;title&gt;简单登陆界面&lt;/title&gt;</span>
-	&lt<span class="comment">;meta charset="utf-8"&gt;</span>
-	&lt<span class="comment">;style type="text/css"&gt;</span>
-		<span class="preprocessor">#box {</span>
-			width: <span class="number">40</span>%<span class="comment">;</span>
-			height: <span class="number">50</span>%<span class="comment">;</span>
-			margin-top: <span class="number">20</span>%<span class="comment">;</span>
-			margin-left: <span class="number">40</span>%<span class="comment">;</span>
-		}
-	&lt<span class="comment">;/style&gt;</span>
-&lt<span class="comment">;/head&gt;</span>
-&lt<span class="comment">;body&gt;</span>
-	&lt<span class="comment">;div id="box"&gt;</span>
-		&lt<span class="comment">;form action="find.jsp" method="post"&gt; </span>
-			用户名: &lt<span class="comment">;input type="text" name="u1"&gt;&lt;br&gt;</span>
-			密码:   &lt<span class="comment">;input type="password" name="p1"&gt; &lt;br&gt;</span>
-			&lt<span class="comment">;input type="submit" value="提交"&gt;</span>
-		&lt<span class="comment">;/form&gt;</span>
-	&lt<span class="comment">;/div&gt;</span>
-&lt<span class="comment">;/body&gt;</span>
-&lt<span class="comment">;/html&gt;</span>
+</pre></td><td class="code"><pre>	&lt<span class="comment">;html&gt;</span>
+	&lt<span class="comment">;head&gt;</span>
+		&lt<span class="comment">;title&gt;简单登陆界面&lt;/title&gt;</span>
+		&lt<span class="comment">;meta charset="utf-8"&gt;</span>
+		&lt<span class="comment">;style type="text/css"&gt;</span>
+			<span class="preprocessor">#box {</span>
+				width: <span class="number">40</span>%<span class="comment">;</span>
+				height: <span class="number">50</span>%<span class="comment">;</span>
+				margin-top: <span class="number">20</span>%<span class="comment">;</span>
+				margin-left: <span class="number">40</span>%<span class="comment">;</span>
+			}
+		&lt<span class="comment">;/style&gt;</span>
+	&lt<span class="comment">;/head&gt;</span>
+	&lt<span class="comment">;body&gt;</span>
+		&lt<span class="comment">;div id="box"&gt;</span>
+			&lt<span class="comment">;form action="find.jsp" method="post"&gt; </span>
+				用户名: &lt<span class="comment">;input type="text" name="u1"&gt;&lt;br&gt;</span>
+				密码:   &lt<span class="comment">;input type="password" name="p1"&gt; &lt;br&gt;</span>
+				&lt<span class="comment">;input type="submit" value="提交"&gt;</span>
+			&lt<span class="comment">;/form&gt;</span>
+		&lt<span class="comment">;/div&gt;</span>
+	&lt<span class="comment">;/body&gt;</span>
+	&lt<span class="comment">;/html&gt;</span>
 </pre></td></tr></table></figure>
 
 <h3>jsp文件代码</h3>
@@ -142,32 +142,32 @@
 24
 25
 26
-</pre></td><td class="code"><pre>&lt<span class="comment">;%@page contentType="text/html; charset=utf-8" import="java.sql.*" %&gt;</span>
-&lt<span class="comment">;%</span>
-	request<span class="preprocessor">.setCharacterEncoding</span>(<span class="string">"utf-8"</span>)<span class="comment">;</span>
-	String uu = request<span class="preprocessor">.getParameter</span>(<span class="string">"u1"</span>)<span class="comment">;</span>
-	String pp = request<span class="preprocessor">.getParameter</span>(<span class="string">"p1"</span>)<span class="comment">;</span>
-	String dri = <span class="string">"com.mysql.jdbc.Driver"</span><span class="comment">;</span>
-	String url = <span class="string">"jdbc:mysql://localhost:3306/chenchen"</span><span class="comment">;</span>
-	Class<span class="preprocessor">.forName</span>(dri)<span class="comment">;</span>
-	Connection con = DriverManager<span class="preprocessor">.getConnection</span>(url,<span class="string">"root"</span>,<span class="string">"zsc168"</span>)<span class="comment">;</span>
-	Statement smt = con<span class="preprocessor">.createStatement</span>()<span class="comment">;</span>
-	String sql = <span class="string">"select * from book"</span><span class="comment">;</span>
-	ResultSet rs = smt<span class="preprocessor">.executeQuery</span>(sql)<span class="comment">;</span>
-	int flage = <span class="number">0</span><span class="comment">;</span>
-	while(rs<span class="preprocessor">.next</span>()){
-		if(uu<span class="preprocessor">.equals</span>(rs<span class="preprocessor">.getString</span>(<span class="string">"user"</span>)) && pp<span class="preprocessor">.equals</span>(rs<span class="preprocessor">.getString</span>(<span class="string">"password"</span>))){
-			<span class="keyword">out</span><span class="preprocessor">.print</span>(<span class="string">"欢迎"</span> + uu + <span class="string">"登陆"</span>)<span class="comment">;</span>
-			flage = <span class="number">1</span><span class="comment">;</span>
-			<span class="keyword">break</span><span class="comment">;</span>
+</pre></td><td class="code"><pre>	&lt<span class="comment">;%@page contentType="text/html; charset=utf-8" import="java.sql.*" %&gt;</span>
+	&lt<span class="comment">;%</span>
+		request<span class="preprocessor">.setCharacterEncoding</span>(<span class="string">"utf-8"</span>)<span class="comment">;</span>
+		String uu = request<span class="preprocessor">.getParameter</span>(<span class="string">"u1"</span>)<span class="comment">;</span>
+		String pp = request<span class="preprocessor">.getParameter</span>(<span class="string">"p1"</span>)<span class="comment">;</span>
+		String dri = <span class="string">"com.mysql.jdbc.Driver"</span><span class="comment">;</span>
+		String url = <span class="string">"jdbc:mysql://localhost:3306/chenchen"</span><span class="comment">;</span>
+		Class<span class="preprocessor">.forName</span>(dri)<span class="comment">;</span>
+		Connection con = DriverManager<span class="preprocessor">.getConnection</span>(url,<span class="string">"root"</span>,<span class="string">"zsc168"</span>)<span class="comment">;</span>
+		Statement smt = con<span class="preprocessor">.createStatement</span>()<span class="comment">;</span>
+		String sql = <span class="string">"select * from book"</span><span class="comment">;</span>
+		ResultSet rs = smt<span class="preprocessor">.executeQuery</span>(sql)<span class="comment">;</span>
+		int flage = <span class="number">0</span><span class="comment">;</span>
+		while(rs<span class="preprocessor">.next</span>()){
+			if(uu<span class="preprocessor">.equals</span>(rs<span class="preprocessor">.getString</span>(<span class="string">"user"</span>)) && pp<span class="preprocessor">.equals</span>(rs<span class="preprocessor">.getString</span>(<span class="string">"password"</span>))){
+				<span class="keyword">out</span><span class="preprocessor">.print</span>(<span class="string">"欢迎"</span> + uu + <span class="string">"登陆"</span>)<span class="comment">;</span>
+				flage = <span class="number">1</span><span class="comment">;</span>
+				<span class="keyword">break</span><span class="comment">;</span>
+			}
 		}
-	}
-	if (flage == <span class="number">0</span>) {
-		%&gt<span class="comment">;用户名或密码不对!!!&lt;a href="login.html"&gt;返回&lt;/a&gt;&lt;%</span>
-	}
-	smt<span class="preprocessor">.close</span>()<span class="comment">;</span>
-	con<span class="preprocessor">.close</span>()<span class="comment">;</span>
-%&gt<span class="comment">;</span>
+		if (flage == <span class="number">0</span>) {
+			%&gt<span class="comment">;用户名或密码不对!!!&lt;a href="login.html"&gt;返回&lt;/a&gt;&lt;%</span>
+		}
+		smt<span class="preprocessor">.close</span>()<span class="comment">;</span>
+		con<span class="preprocessor">.close</span>()<span class="comment">;</span>
+	%&gt<span class="comment">;</span>
 </pre></td></tr></table></figure>
       
     </div>
