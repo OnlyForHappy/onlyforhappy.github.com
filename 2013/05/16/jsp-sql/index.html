@@ -66,7 +66,7 @@
 
 <h2>html文件代码</h2>
 <p><strong>看看代码块</strong></p>
-<figure class="highlight"><figcaption><span>[jsp登陆]</span></figcaption><table><tr><td class="gutter"><pre>1
+<figure class="highlight"><figcaption><span>[jsp登陆-html]</span></figcaption><table><tr><td class="gutter"><pre>1
 2
 3
 4
@@ -116,7 +116,7 @@
 
 <h3>jsp文件代码</h3>
 <p><strong>看看代码块</strong></p>
-<figure class="highlight"><figcaption><span>[jsp登陆]</span></figcaption><table><tr><td class="gutter"><pre>1
+<figure class="highlight"><figcaption><span>[jsp登陆-jsp]</span></figcaption><table><tr><td class="gutter"><pre>1
 2
 3
 4
@@ -142,8 +142,8 @@
 24
 25
 26
-</pre></td><td class="code"><pre>&lt<span class="comment">;%@page contentType="text/html; charset=utf-8" import="java.sql.*" %&gt;</span>
-&lt<span class="comment">;%</span>
+</pre></td><td class="code"><pre>&lt;%@page contentType=<span class="string">"text/html; charset=utf-8"</span> import=<span class="string">"java.sql.*"</span> %&gt;
+&lt;%
 	request<span class="preprocessor">.setCharacterEncoding</span>(<span class="string">"utf-8"</span>)<span class="comment">;</span>
 	String uu = request<span class="preprocessor">.getParameter</span>(<span class="string">"u1"</span>)<span class="comment">;</span>
 	String pp = request<span class="preprocessor">.getParameter</span>(<span class="string">"p1"</span>)<span class="comment">;</span>
@@ -156,18 +156,18 @@
 	ResultSet rs = smt<span class="preprocessor">.executeQuery</span>(sql)<span class="comment">;</span>
 	int flage = <span class="number">0</span><span class="comment">;</span>
 	while(rs<span class="preprocessor">.next</span>()){
-		if(uu<span class="preprocessor">.equals</span>(rs<span class="preprocessor">.getString</span>(<span class="string">"user"</span>)) && pp<span class="preprocessor">.equals</span>(rs<span class="preprocessor">.getString</span>(<span class="string">"password"</span>))){
+		if(uu<span class="preprocessor">.equals</span>(rs<span class="preprocessor">.getString</span>(<span class="string">"user"</span>)) &amp;&amp; pp<span class="preprocessor">.equals</span>(rs<span class="preprocessor">.getString</span>(<span class="string">"password"</span>))){
 			<span class="keyword">out</span><span class="preprocessor">.print</span>(<span class="string">"欢迎"</span> + uu + <span class="string">"登陆"</span>)<span class="comment">;</span>
 			flage = <span class="number">1</span><span class="comment">;</span>
 			<span class="keyword">break</span><span class="comment">;</span>
 		}
 	}
 	if (flage == <span class="number">0</span>) {
-		%&gt<span class="comment">;用户名或密码不对!!!&lt;a href="login.html"&gt;返回&lt;/a&gt;&lt;%</span>
+		%&gt;用户名或密码不对!!!&lt;a href=<span class="string">"login.html"</span>&gt;返回&lt;/a&gt;&lt;%
 	}
 	smt<span class="preprocessor">.close</span>()<span class="comment">;</span>
 	con<span class="preprocessor">.close</span>()<span class="comment">;</span>
-%&gt<span class="comment">;</span>
+%&gt;
 </pre></td></tr></table></figure>
       
     </div>
